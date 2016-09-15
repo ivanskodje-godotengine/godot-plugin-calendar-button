@@ -4,6 +4,9 @@
 This will add a CalendarButton node that allows you to easily select a date without having to do all the work of creating your own Calendar and Date classes.
 Very easy to use.
 
+![](http://i.imgur.com/effwCjs.png)
+
+-----------
 
 ## How to implement in your project
 
@@ -15,9 +18,8 @@ Very easy to use.
 
 -----------
 
-**Example:**
+**Code Example:**
 
-# All code you are adding runs from your script:
 func _ready():
 	var calendar_button_node = get_node("path/to/CalendarButton")
 	calendar_button_node.connect("date_selected", self, "your_func_here")
@@ -29,10 +31,7 @@ func your_func_here(date_obj):
 
 **Get detailed comments inside each class for more information.**
 
-
-## Screenshot
-![](http://i.imgur.com/effwCjs.png)
-
+-----------
 
 ## License
 
