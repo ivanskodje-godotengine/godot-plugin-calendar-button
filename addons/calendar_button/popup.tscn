@@ -71,6 +71,7 @@ margin_left = 193.0
 margin_right = 234.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 41, 0 )
+align = 1
 
 [node name="edit_year" type="LineEdit" parent="PanelContainer/vbox/hbox_month_year"]
 visible = false
