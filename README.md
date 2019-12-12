@@ -4,7 +4,7 @@
 # Calendar Button Plugin for Godot Engine (jospic Fork)
 ![](icon.png)
 
-This plugin, originally developed by Ivan Skjde, will add a CalendarButton node that allows you to easily select a date without having to do all the work of creating your own Calendar and Date classes.
+This plugin, originally developed by Ivan Skodje, will add a CalendarButton node that allows you to easily select a date without having to do all the work of creating your own Calendar and Date classes.
 
 ![](https://i.imgur.com/effwCjs.png)
 
