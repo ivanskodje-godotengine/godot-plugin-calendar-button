@@ -1,10 +1,23 @@
-# Calendar Button Plugin for Godot Engine
+|   |   |
+|---|---|
+|   |   |
+# Calendar Button Plugin for Godot Engine (jospic Fork)
 ![](icon.png)
 
-This will add a CalendarButton node that allows you to easily select a date without having to do all the work of creating your own Calendar and Date classes.
-Very easy to use.
+This plugin, originally developed by Ivan Skjde, will add a CalendarButton node that allows you to easily select a date without having to do all the work of creating your own Calendar and Date classes.
+Thi version is a fork by jospic that introduces many new features.
 
 ![](http://i.imgur.com/effwCjs.png)
+
+-----------
+
+## Main improvements introduced by this version
+
+1. Compatibility with Godot 3.x version
+2. Possibility to insert a specific date (double click on month-year header label)
+3. Possibility of localization (selecting in the properties node button)
+4. Now the user can choose the starting day of the week, Sunday, as in the English countries or Monday as in the Latin countries (selecting in the properties node button)
+5. Possibility to choose the length of the week short names from  one to three characters (selecting in the properties node button)
 
 -----------
 
