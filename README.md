@@ -1,6 +1,4 @@
-|   |   |
-|---|---|
-|   |   |
+
 # Calendar Button Plugin for Godot Engine (jospic Fork)
 ![](icon.png)
 
