@@ -1,0 +1,21 @@
+﻿{
+    "Jan"      :"Gen",
+    "Feb"      :"Feb", 
+    "Mar"      :"Mar",
+    "Apr"      :"Apr",
+    "May"      :"Mag", 
+    "Jun"      :"Giu", 
+    "Jul"      :"Lug", 
+    "Aug"      :"Ago", 
+    "Sep"      :"Set", 
+    "Oct"      :"Ott", 
+    "Nov"      :"Nov", 
+    "Dec"      :"Dic",
+    "Sunday"   :"Domenica" , 
+    "Monday"   :"Lunedì"   , 
+    "Tuesday"  :"Martedì"  , 
+    "Wednesday":"Mercoledì", 
+    "Thursday" :"Giovedì"  , 
+    "Friday"   :"Venerdì"  , 
+    "Saturday" :"Sabato"
+}

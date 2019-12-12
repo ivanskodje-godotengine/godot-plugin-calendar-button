@@ -19,7 +19,7 @@ func _init(d = OS.get_datetime()["day"], m = OS.get_datetime()["month"], y = OS.
 # YYYY : Four digit year
 #
 # Returns a string with a date format
-func date(date_format = "DD-MM-YY"):
+func date(date_format = "DD-MM-YYYY"):
 	if("DD".is_subsequence_of(date_format)):
 		date_format = date_format.replace("DD", str(day()).pad_zeros(2))
 	
