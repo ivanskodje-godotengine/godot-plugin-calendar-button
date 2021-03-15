@@ -1,4 +1,4 @@
-# Calendar Button Plugin for Godot Engine
+# Calendar Button Plugin for Godot Engine 3.2.3
 ![](icon.png)
 
 This will add a CalendarButton node that allows you to easily select a date without having to do all the work of creating your own Calendar and Date classes.
@@ -14,7 +14,7 @@ Very easy to use.
 2. From a script of your choice, get the CalendarButton node
 3. Using the node, add a connection: calendar_button_node.connect("date_selected", self, "your_func_here")
 4. Create a function "func your_func_here(date_obj)". Note that it expect an argument.
-5. Do a test inside "your_func_here", such as:  print(date_obj.date())
+5. Do a test inside "your_func_here", such as:  print(date_obj.date("DD-MM-YYYY"))
 
 -----------
 
