@@ -1,11 +1,16 @@
 [gd_scene format=2]
 
-[node name="popup" type="Control"]
+[node name="popup" type="Popup"]
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 266.0
+margin_bottom = 230.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="vbox" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 7.0
@@ -73,18 +78,16 @@ custom_constants/hseparation = 10
 columns = 7
 
 [node name="label_sunday" type="Label" parent="PanelContainer/vbox/hbox_label_days"]
-margin_top = -1.0
 margin_right = 30.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 30, 15 )
 text = "Sun"
 align = 1
 
 [node name="label_monday" type="Label" parent="PanelContainer/vbox/hbox_label_days"]
 margin_left = 40.0
-margin_top = -1.0
 margin_right = 70.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 30, 15 )
 text = "Mon"
 align = 1
@@ -98,27 +101,24 @@ align = 1
 
 [node name="label_wednesday" type="Label" parent="PanelContainer/vbox/hbox_label_days"]
 margin_left = 113.0
-margin_top = -1.0
 margin_right = 143.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 30, 15 )
 text = "Wed"
 align = 1
 
 [node name="label_thursday" type="Label" parent="PanelContainer/vbox/hbox_label_days"]
 margin_left = 153.0
-margin_top = -1.0
 margin_right = 183.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 30, 15 )
 text = "Thu"
 align = 1
 
 [node name="label_friday" type="Label" parent="PanelContainer/vbox/hbox_label_days"]
 margin_left = 193.0
-margin_top = -1.0
 margin_right = 223.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 30, 15 )
 text = "Fri"
 align = 1
