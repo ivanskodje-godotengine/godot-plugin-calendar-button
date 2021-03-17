@@ -153,19 +153,32 @@ func check_position():
 	var cal = popup.get_parent()
 	var popup_container = popup.get_node("PanelContainer")
 	
-	var difference_x = 0
-	var difference_y = 0
+	var popupXsize = popup_container.get_size().x
+	var popupYsize = popup_container.get_size().y
+	var calIconXpos = cal.get_global_position().x
+	var calIconYpos = cal.get_global_position().y
+	var calIconXsize = cal.get_size().x
+	var calIconYsize = cal.get_size().y
+	var osWindSizeX = OS.get_window_size().x
+	var osWindSizeY = OS.get_window_size().y
 	
-	var x_total = cal.get_position().x + cal.get_size().x + popup_container.get_position().x + popup_container.get_size().x
-	if(x_total > OS.get_window_size().x):
-		difference_x = x_total - OS.get_window_size().x
+	var xPos = 0
+	if(osWindSizeX > (popupXsize + calIconXsize/2)):
+		var popupXend = popupXsize + calIconXpos + calIconXsize/2
+		if(osWindSizeX > popupXend):
+			xPos = calIconXpos + calIconXsize/2
+		else:
+			xPos = osWindSizeX - popupXsize
 	
-	var y_total = cal.get_position().y + cal.get_size().y + popup_container.get_position().y + popup_container.get_size().y
-	if(y_total > OS.get_window_size().y):
-		difference_y = y_total - OS.get_window_size().y
-	
-	popup_container.set_position(Vector2(popup_container.get_position().x - difference_x, popup_container.get_position().y - difference_y))
-
+	var yPos = 0
+	if(osWindSizeY > (popupYsize + calIconYsize/2)):
+		var popupYend = popupYsize + calIconYpos + calIconYsize/2
+		if(osWindSizeY > popupYend):
+			yPos = calIconYpos + calIconYsize/2
+		else:
+			yPos = osWindSizeY - popupYsize
+			
+	popup.set_global_position(Vector2(xPos, yPos))
 
 func go_prev_month():
 	# Decrease by one
@@ -216,6 +229,8 @@ func close_popup():
 
 
 func _toggled(is_pressed):
+	if(!has_node("popup")):
+		add_child(popup)
 	if(!is_pressed):
 		close_popup()
 	else:
