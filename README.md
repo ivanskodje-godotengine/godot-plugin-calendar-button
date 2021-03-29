@@ -49,9 +49,9 @@ Please do your best to follow the official [GDscript style guide](https://docs.g
   
 The short version:
 > `NodeName`, not `node_name`   
-> `node_name.gd`, not `NodeName.gd`
-> `my_function()`, not `MyFunction()`
-> `_unused_variable`, not `unused_variable` 
+> `node_name.gd`, not `NodeName.gd`  
+> `my_function()`, not `MyFunction()`  
+> `_unused_variable`, not `unused_variable`  
 
 ## Versioning
 This projects follow [semantic versioning](https://semver.org/).
