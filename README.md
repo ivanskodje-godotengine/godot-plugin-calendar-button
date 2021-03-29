@@ -16,6 +16,16 @@ Very easy to use.
 4. Create a function "func your_func_here(date_obj)". Note that it expect an argument.
 5. Do a test inside "your_func_here", such as:  print(date_obj.date("DD-MM-YYYY"))
 
+### Manual Plugin Installation
+
+> Follow these steps if you are unable to find the CalendarButton Node.
+
+1. Put the addons folder in the root of your Godot Engine project.
+2. Go to the "Project" menu dropdown and select "Project Settings".
+3. Select the "Plugins" tab. 
+4. Select "Update" if you do not see the plugin.
+5. Enable it.
+
 -----------
 
 **Code Example:**
@@ -33,11 +43,41 @@ func your_func_here(date_obj):
 
 -----------
 
+# Development & Contributions
+
+First of all; Thank you very much for making pull requests and posting issues related to this project.
+Secondly, I hope we all continue to work towards writing amazing code :)
+
+## GDScript style guide
+Please do your best to follow the official [GDscript style guide](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_styleguide.html)  
+  
+The short version:
+> `NodeName`, not `node_name`   
+> `node_name.gd`, not `NodeName.gd`
+> `my_function()`, not `MyFunction()`
+> `_unused_variable`, not `unused_variable` 
+
+## Versioning
+This projects follow [semantic versioning](https://semver.org/).
+
+> Given a version number MAJOR.MINOR.PATCH, increment the:  
+>   
+> MAJOR version when you make incompatible API changes,  
+> MINOR version when you add functionality in a backwards compatible manner, and  
+> PATCH version when you make backwards compatible bug fixes.  
+
+-----------
+
+## Credits 
+Big thanks to all that have posted issues and written PRs
+
+-----------
+
 ## License
 
 MIT License (MIT)
 
-Copyright (c) 2016 Ivan P. Skodje
+Copyright (c) 2021 Ivan Skodje
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
