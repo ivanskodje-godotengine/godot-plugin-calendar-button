@@ -39,10 +39,6 @@ func your_func_here(date_obj):
 
 -----------
 
-**Get detailed comments inside each class for more information.**
-
------------
-
 # Development & Contributions
 
 First of all; Thank you very much for making pull requests and posting issues related to this project.
