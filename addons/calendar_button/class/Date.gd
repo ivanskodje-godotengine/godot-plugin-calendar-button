@@ -44,3 +44,27 @@ func set_month(var _month : int):
 
 func set_year(var _year : int):
 	year = _year
+
+func change_to_prev_month():
+	var selected_month = month()
+	selected_month -= 1
+	if(selected_month < 1):
+		set_month(12)
+		set_year(year() - 1)
+	else:
+		set_month(selected_month)
+
+func change_to_next_month():
+	var selected_month = month()
+	selected_month += 1
+	if(selected_month > 12):
+		set_month(1)
+		set_year(year() + 1)
+	else:
+		set_month(selected_month)
+
+func change_to_prev_year():
+	set_year(year() - 1)
+
+func change_to_next_year():
+	set_year(year() + 1)

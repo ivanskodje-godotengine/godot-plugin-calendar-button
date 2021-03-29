@@ -10,7 +10,6 @@ var window_restrictor := WindowRestrictor.new()
 var popup : Popup
 var calendar_buttons : CalendarButtons
 
-
 func _enter_tree():
 	set_toggle_mode(true)
 	setup_calendar_icon()
@@ -63,37 +62,19 @@ func day_selected(btn_node):
 	emit_signal("date_selected", selected_date)
 
 func go_prev_month():
-	var selected_month = selected_date.month()
-	selected_month -= 1
-	if(selected_month < 1):
-		selected_month = 12
-		var selected_year = selected_date.year()
-		selected_year -= 1
-		selected_date.set_year(selected_year)
-	selected_date.set_month(selected_month)
+	selected_date.change_to_prev_month()
 	refresh_data()
 
 func go_next_month():
-	var selected_month = selected_date.month()
-	selected_month += 1
-	if(selected_month > 12):
-		selected_month = 1
-		var selected_year = selected_date.year()
-		selected_year += 1
-		selected_date.set_year(selected_year)
-	selected_date.set_month(selected_month)
+	selected_date.change_to_next_month()
 	refresh_data()
 
 func go_prev_year():
-	var selected_year = selected_date.year()
-	selected_year -= 1
-	selected_date.set_year(selected_year)
+	selected_date.change_to_prev_year()
 	refresh_data()
 
 func go_next_year():
-	var selected_year = selected_date.year()
-	selected_year += 1
-	selected_date.set_year(selected_year)
+	selected_date.change_to_next_year()
 	refresh_data()
 
 func close_popup():
