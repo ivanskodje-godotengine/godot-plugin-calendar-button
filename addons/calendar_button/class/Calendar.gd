@@ -73,7 +73,7 @@ func get_weekday(d, m, y):
 
 # Returns the weekday name
 func get_weekday_name(d, m, y):
-	var day_num = get_week(d, m, y)
+	var day_num = get_weekday(d, m, y)
 	return weekday_name[day_num]
 
 
