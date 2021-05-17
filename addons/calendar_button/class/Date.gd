@@ -4,8 +4,8 @@ var day : int setget set_day
 var month : int setget set_month
 var year : int setget set_year
 
-func _init(day : int = OS.get_datetime()["day"], 
-		month : int = OS.get_datetime()["month"], 
+func _init(day : int = OS.get_datetime()["day"],
+		month : int = OS.get_datetime()["month"],
 		year : int = OS.get_datetime()["year"]):
 	self.day = day
 	self.month = month

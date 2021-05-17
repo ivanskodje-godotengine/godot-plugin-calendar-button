@@ -3,13 +3,13 @@ class_name Calendar
 enum Month { JAN = 1, FEB = 2, MAR = 3, APR = 4, MAY = 5, JUN = 6, JUL = 7,
 		AUG = 8, SEP = 9, OCT = 10, NOV = 11, DEC = 12 }
 
-const MONTH_NAME = [ 
-		"Jan", "Feb", "Mar", "Apr", 
-		"May", "Jun", "Jul", "Aug", 
+const MONTH_NAME = [
+		"Jan", "Feb", "Mar", "Apr",
+		"May", "Jun", "Jul", "Aug",
 		"Sep", "Oct", "Nov", "Dec" ]
 
-const WEEKDAY_NAME = [ 
-		"Sunday", "Monday", "Tuesday", "Wednesday", 
+const WEEKDAY_NAME = [
+		"Sunday", "Monday", "Tuesday", "Wednesday",
 		"Thursday", "Friday", "Saturday" ]
 
 func get_days_in_month(month : int, year : int) -> int:
@@ -25,7 +25,7 @@ func get_days_in_month(month : int, year : int) -> int:
 			number_of_days = 28
 	else:
 		number_of_days = 31
-	
+
 	return number_of_days
 
 func get_weekday(day : int, month : int, year : int) -> int:
