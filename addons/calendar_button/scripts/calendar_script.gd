@@ -19,18 +19,8 @@ func _enter_tree():
 	refresh_data()
 
 func setup_calendar_icon():
-	var normal_texture := create_button_texture("btn_32x32_03.png")
-	set_normal_texture(normal_texture)
-
-	var pressed_texture := create_button_texture("btn_32x32_04.png")
-	set_pressed_texture(pressed_texture)
-
-func create_button_texture(var image_name : String) -> ImageTexture:
-	var image_normal := Image.new()
-	image_normal.load("res://addons/calendar_button/btn_img/" + image_name)
-	var image_texture_normal := ImageTexture.new()
-	image_texture_normal.create_from_image(image_normal)
-	return image_texture_normal
+	texture_normal = load("res://addons/calendar_button/btn_img/btn_32x32_03.png")
+	texture_pressed = load("res://addons/calendar_button/btn_img/btn_32x32_04.png")
 	
 func create_popup_scene() -> Popup:
 	return preload("res://addons/calendar_button/popup.tscn").instance() as Popup
