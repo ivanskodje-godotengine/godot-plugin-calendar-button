@@ -1,11 +1,14 @@
 class_name CalendarButtons
 
 const BUTTONS_COUNT = 42
-var calendar = load("res://addons/calendar_button/class/calendar.gd").new()
+var calendar : Calendar
 var buttons_container : GridContainer
+var week_starts_on_sunday : bool
 
-func _init(var calendar_script, var buttons_container : GridContainer):
+func _init(var calendar_script, var buttons_container : GridContainer, var calendar : Calendar, var week_starts_on_sunday : bool):
 	self.buttons_container = buttons_container
+	self.calendar = calendar
+	self.week_starts_on_sunday = week_starts_on_sunday
 	setup_button_signals(calendar_script)
 
 func setup_button_signals(var calendar_script):
@@ -17,7 +20,9 @@ func update_calendar_buttons(var selected_date : Date):
 	_clear_calendar_buttons()
 	
 	var days_in_month : int = calendar.get_days_in_month(selected_date.month(), selected_date.year())
-	var start_day_of_week : int = calendar.get_weekday(1, selected_date.month(), selected_date.year())
+
+	var start_day_of_week : int = calendar.get_weekday(int(week_starts_on_sunday), selected_date.month(), selected_date.year())
+
 	for i in range(days_in_month):
 		var btn_node : Button = buttons_container.get_node("btn_" + str(i + start_day_of_week))
 		btn_node.set_text(str(i + 1))

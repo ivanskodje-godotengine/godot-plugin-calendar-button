@@ -10,7 +10,12 @@ const MONTH_NAME = [
 
 const WEEKDAY_NAME = [ 
 		"Sunday", "Monday", "Tuesday", "Wednesday", 
-		"Thursday", "Friday", "Saturday" ]
+		"Thursday", "Friday", "Saturday", "Sunday" ]
+
+var week_starts_on_sunday : bool
+
+func _init(var week_starts_on_sunday : bool):
+	self.week_starts_on_sunday = week_starts_on_sunday
 
 func get_days_in_month(month : int, year : int) -> int:
 	var number_of_days : int
@@ -36,7 +41,7 @@ func get_weekday(day : int, month : int, year : int) -> int:
 
 func get_weekday_name(day : int, month : int, year : int) -> String:
 	var day_num = get_weekday(day, month, year)
-	return WEEKDAY_NAME[day_num]
+	return WEEKDAY_NAME[day_num + int(!week_starts_on_sunday)]
 
 func get_month_name(month : int) -> String:
 	return MONTH_NAME[month - 1]
