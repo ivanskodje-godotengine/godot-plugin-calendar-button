@@ -1,9 +1,11 @@
 tool
 extends TextureButton
 
+export var week_starts_on_sunday = true
+
 signal date_selected(date_obj)
 
-var calendar := Calendar.new()
+var calendar := Calendar.new(week_starts_on_sunday)
 var selected_date := Date.new()
 var window_restrictor := WindowRestrictor.new()
 
@@ -17,27 +19,18 @@ func _enter_tree():
 	calendar_buttons = create_calendar_buttons()
 	setup_month_and_year_signals(popup)
 	refresh_data()
+	setup_day_labels()
 
 func setup_calendar_icon():
-	var normal_texture := create_button_texture("btn_32x32_03.png")
-	set_normal_texture(normal_texture)
-
-	var pressed_texture := create_button_texture("btn_32x32_04.png")
-	set_pressed_texture(pressed_texture)
-
-func create_button_texture(var image_name : String) -> ImageTexture:
-	var image_normal := Image.new()
-	image_normal.load("res://addons/calendar_button/btn_img/" + image_name)
-	var image_texture_normal := ImageTexture.new()
-	image_texture_normal.create_from_image(image_normal)
-	return image_texture_normal
+	texture_normal = load("res://addons/calendar_button/btn_img/btn_32x32_03.png")
+	texture_pressed = load("res://addons/calendar_button/btn_img/btn_32x32_04.png")
 	
 func create_popup_scene() -> Popup:
 	return preload("res://addons/calendar_button/popup.tscn").instance() as Popup
 
 func create_calendar_buttons() -> CalendarButtons:
 	var calendar_container : GridContainer = popup.get_node("PanelContainer/vbox/hbox_days")
-	return CalendarButtons.new(self, calendar_container)
+	return CalendarButtons.new(self, calendar_container, calendar, week_starts_on_sunday)
 
 func setup_month_and_year_signals(popup : Popup):
 	var month_year_path = "PanelContainer/vbox/hbox_month_year/"
@@ -45,6 +38,21 @@ func setup_month_and_year_signals(popup : Popup):
 	popup.get_node(month_year_path + "button_next_month").connect("pressed",self,"go_next_month")
 	popup.get_node(month_year_path + "button_prev_year").connect("pressed",self,"go_prev_year")
 	popup.get_node(month_year_path + "button_next_year").connect("pressed",self,"go_next_year")
+
+func setup_day_labels():
+
+	var hbox_label_days = "PanelContainer/vbox/hbox_label_days/"
+	var hbox_label_days_node = popup.get_node(hbox_label_days)
+
+	
+	var day_index = int(!week_starts_on_sunday) # 1 if starts on monday, 0 on sunday
+
+	for day in hbox_label_days_node.get_children():
+		print(day.get_name(), " ", day.text)
+
+		day.text = calendar.WEEKDAY_NAME[day_index].substr(0, 3)
+
+		day_index += 1
 
 func set_popup_title(title : String):
 	var label_month_year_node := popup.get_node("PanelContainer/vbox/hbox_month_year/label_month_year") as Label
