@@ -1,7 +1,7 @@
 class_name CalendarButtons
 
 const BUTTONS_COUNT = 42
-var calendar = load("res://addons/calendar_button/class/calendar.gd").new()
+var calendar = load("res://addons/calendar_button/class/Calendar.gd").new()
 var buttons_container : GridContainer
 
 func _init(var calendar_script, var buttons_container : GridContainer):
